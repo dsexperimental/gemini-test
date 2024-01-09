@@ -9,7 +9,7 @@ load_dotenv()
 api_key = os.getenv('GOOGLE_AI_KEY')
 
 # Set the API URL
-url = "https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText"
+url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
 
 # Define the headers
 headers = {
@@ -18,9 +18,15 @@ headers = {
 
 # Define the data payload
 data = {
-    "prompt": {
-        "text": "Write a story about a magic backpack"
-    }
+    "contents": [
+        {
+            "parts":[
+                {
+                    "text": "Write a story about a magic backpack."
+                }
+            ]
+        }
+    ]
 }
 
 # Send the POST request
